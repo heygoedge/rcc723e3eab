@@ -2099,5 +2099,5 @@ function show(k){document.querySelectorAll('section.run').forEach(s=>{const on=s
 const sec=document.getElementById('s-'+k);lazy(sec);sec.querySelectorAll('.turn video').forEach(v=>io.observe(v));
 if(ALL[k]){if(!players[k])players[k]=Player(sec,ALL[k]);players[k].show()}if(location.hash.slice(1)!==k)history.replaceState(null,'','#'+k)}
 const pick=document.getElementById('pick');pick.addEventListener('change',()=>{show(pick.value);scrollTo(0,0)});
-const h=location.hash.slice(1).split('-')[0];if([...pick.options].some(o=>o.value===h))pick.value=h;show(pick.value);
+const h=location.hash.slice(1).replace(/-t[0-9]+$/,'');if([...pick.options].some(o=>o.value===h))pick.value=h;show(pick.value);
 </script></body></html>
